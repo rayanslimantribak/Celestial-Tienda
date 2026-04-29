@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>404 - Página no encontrada | Celestial</title>
+    <style>
+        .error-404 {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .error-404 h1 {
+            font-size: 8em;
+            margin: 0;
+            color: #ff6b6b;
+            text-shadow: 3px 3px 0 #333;
+        }
+        .error-404 h2 {
+            font-size: 2em;
+            margin: 20px 0;
+            color: white;
+        }
+        .error-404 p {
+            font-size: 1.2em;
+            color: white;
+            margin-bottom: 30px;
+        }
+        .error-404 .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .error-404 .cta-button {
+            width: auto;
+            padding: 15px 30px;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo"><img src="https://i.ibb.co/0pFFxgx6/Celestial-4-removebg-preview.png"></div>
+    <nav>
+        <a href="inicio.html" data-key="inicio">Inicio</a>
+        <a href="productos.html" data-key="productos">Productos</a>
+        <a href="presentacion.html" data-key="nosotros">Nosotros</a>
+        <a href="contacto.html" data-key="contacto">Contacto</a>
+        <a href="ver_carrito.php">Carrito</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="error-404">
+        <h1>404</h1>
+        <h2 data-key="error_titulo">Ups! Página no encontrada</h2>
+        <p data-key="error_descripcion">La página que estás buscando no existe o ha sido movida.</p>
+        
+        <div class="buttons">
+            <a href="inicio.html" class="cta-button" data-key="error_inicio">Ir al Inicio</a>
+            <a href="productos.html" class="cta-button" style="background: #7bd5ff;" data-key="error_productos">Ver Productos</a>
+            <a href="contacto.html" class="cta-button" style="background: #5865F2;" data-key="error_contacto">Contactar</a>
+        </div>
+    </div>
+</section>
+
+<footer><p data-key="derechos">© Celestial - SMX 2n C</p></footer>
+
+<script src="auth.js"></script>
+<script src="traductor.js"></script>
+<script src="oscuro.js"></script>
+</body>
+</html>

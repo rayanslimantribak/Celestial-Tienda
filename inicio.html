@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Celestial - Inicio</title>
+</head>
+<body>
+<header>
+    <div class="logo"><img src="https://i.ibb.co/0pFFxgx6/Celestial-4-removebg-preview.png"></div>
+    <nav>
+        <a href="inicio.html" data-key="inicio">Inicio</a>
+        <a href="productos.html" data-key="productos">Productos</a>
+        <a href="presentacion.html" data-key="nosotros">Nosotros</a>
+        <a href="contacto.html" data-key="contacto">Contacto</a>
+        <a href="ver_carrito.php">Carrito</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1 data-key="titulo">Celestial</h1>
+    <p data-key="descripcion">Calidad exclusiva de Santa Coloma de Gramenet.</p>
+    <br>
+    <a href="productos.html" class="cta-button" data-key="ver_catalogo">Ver Catálogo</a>
+    
+    <div id="welcomeMessage" style="display: none; margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.9); border-radius: 10px;">
+        <p id="welcomeText"></p>
+    </div>
+</section>
+
+<footer><p data-key="derechos">© Celestial - Antonio Alcázar y Rayan</p></footer>
+
+<script src="auth.js"></script>
+<script src="traductor.js"></script>
+<script src="oscuro.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentUser = JSON.parse(localStorage.getItem('celestial_currentUser'));
+        if (currentUser) {
+            document.getElementById('welcomeMessage').style.display = 'block';
+            document.getElementById('welcomeText').textContent = `👋 Bienvenido de nuevo, ${currentUser.name}`;
+        }
+    });
+</script>
+</body>
+</html>

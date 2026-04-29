@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Productos - Celestial</title>
+</head>
+<body>
+<header>
+    <div class="logo"><img src="https://i.ibb.co/0pFFxgx6/Celestial-4-removebg-preview.png"></div>
+    <nav>
+        <a href="inicio.html" data-key="inicio">Inicio</a>
+        <a href="productos.html" data-key="productos">Productos</a>
+        <a href="presentacion.html" data-key="nosotros">Nosotros</a>
+        <a href="contacto.html" data-key="contacto">Contacto</a>
+        <a href="ver_carrito.php">Carrito</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div style="text-align:center; width: 100%;">
+        <h1 style="color: white; margin-bottom: 30px;" data-key="nuestros_productos">Nuestros Productos</h1>
+        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+            <div class="card" style="text-align:center; max-width: 250px;">
+                <img src="https://www.masuniformes.com/cdnassets/KARK356BLACK-1_l.jpg" style="width:100%; border-radius:10px;">
+                <h3 data-key="camiseta_negra">Camiseta Negra Celestial</h3>
+                <p>9.99 €</p>
+                <button class="cta-button" onclick="añadirAlCarrito(1, 'Camiseta Negra Celestial', 9.99, 'https://www.masuniformes.com/cdnassets/KARK356BLACK-1_l.jpg')">Añadir al Carrito</button>
+            </div>
+            
+            <div class="card" style="text-align:center; max-width: 250px;">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/008/534/684/small/white-t-shirt-mockup-cutout-file-png.png" style="width:100%; border-radius:10px;">
+                <h3 data-key="camiseta_blanca">Camiseta Blanca Celestial</h3>
+                <p>9.99 €</p>
+                <button class="cta-button" onclick="añadirAlCarrito(2, 'Camiseta Blanca Celestial', 9.99, 'https://static.vecteezy.com/system/resources/thumbnails/008/534/684/small/white-t-shirt-mockup-cutout-file-png.png')">Añadir al Carrito</button>
+            </div>
+            
+            <div class="card" style="text-align:center; max-width: 250px;">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/022/206/203/small/black-sweatshirt-isolated-cut-out-png.png" style="width:100%; border-radius:10px;">
+                <h3 data-key="sudadera">Sudadera Celestial</h3>
+                <p>19.99 €</p>
+                <button class="cta-button" onclick="añadirAlCarrito(3, 'Sudadera Celestial', 19.99, 'https://static.vecteezy.com/system/resources/thumbnails/022/206/203/small/black-sweatshirt-isolated-cut-out-png.png')">Añadir al Carrito</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer><p data-key="derechos">© Celestial</p></footer>
+
+<script src="auth.js"></script>
+<script src="traductor.js"></script>
+<script src="oscuro.js"></script>
+<script>
+function añadirAlCarrito(id, nombre, precio, imagen) {
+    fetch('carrito.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            producto_id: id,
+            producto_nombre: nombre,
+            producto_precio: precio,
+            producto_imagen: imagen
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Producto añadido al carrito');
+        } else {
+            alert(data.message);
+            if (data.message.includes('sesión')) {
+                window.location.href = 'login.html';
+            }
+        }
+    });
+}
+</script>
+</body>
+</html>

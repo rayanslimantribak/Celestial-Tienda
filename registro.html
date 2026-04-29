@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Registrarse - Celestial</title>
+</head>
+<body>
+<header>
+    <div class="logo"><img src="https://i.ibb.co/0pFFxgx6/Celestial-4-removebg-preview.png"></div>
+    <nav>
+        <a href="inicio.html" data-key="inicio">Inicio</a>
+        <a href="productos.html" data-key="productos">Productos</a>
+        <a href="presentacion.html" data-key="nosotros">Nosotros</a>
+        <a href="contacto.html" data-key="contacto">Contacto</a>
+        <a href="ver_carrito.php">Carrito</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="card">
+        <h2 data-key="crear_cuenta">Crear Cuenta</h2>
+        <form id="registerForm">
+            <input type="text" id="registerName" placeholder="Nombre completo" required>
+            <input type="email" id="registerEmail" placeholder="Correo electrónico" required>
+            <input type="password" id="registerPassword" placeholder="Contraseña (mín. 6 caracteres)" required>
+            <input type="password" id="confirmPassword" placeholder="Confirmar contraseña" required>
+            <button type="submit" class="cta-button" data-key="crear_cuenta">Crear Cuenta</button>
+        </form>
+        <p style="text-align: center; margin-top: 15px;">
+            <span data-key="ya_tienes_cuenta">¿Ya tienes cuenta?</span> <a href="login.html" style="color: #7bd5ff;" data-key="inicia_sesion">Inicia sesión aquí</a>
+        </p>
+    </div>
+</section>
+
+<footer><p data-key="derechos">© Celestial</p></footer>
+
+<script src="auth.js"></script>
+<script src="traductor.js"></script>
+<script src="oscuro.js"></script>
+</body>
+</html>

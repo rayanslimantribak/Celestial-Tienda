@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Mi Perfil - Celestial</title>
+</head>
+<body>
+<header>
+    <div class="logo"><img src="https://i.ibb.co/0pFFxgx6/Celestial-4-removebg-preview.png"></div>
+    <nav>
+        <a href="inicio.html" data-key="inicio">Inicio</a>
+        <a href="productos.html" data-key="productos">Productos</a>
+        <a href="presentacion.html" data-key="nosotros">Nosotros</a>
+        <a href="contacto.html" data-key="contacto">Contacto</a>
+        <a href="ver_carrito.php">Carrito</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="card" style="max-width: 600px;">
+        <h2 data-key="mi_perfil">Mi Área Personal</h2>
+        
+        <div class="profile-info">
+            <h3 data-key="informacion_usuario">Información del Usuario</h3>
+            <p><strong data-key="nombre">Nombre:</strong> <span id="userName">Cargando...</span></p>
+            <p><strong data-key="email">Email:</strong> <span id="userEmail">Cargando...</span></p>
+            <p><strong data-key="miembro_desde">Miembro desde:</strong> <span id="joinDate">Cargando...</span></p>
+        </div>
+        
+        <div class="profile-actions" style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <button class="cta-button" onclick="location.href='mis-pedidos.html'" style="width: auto; padding: 12px 25px;" data-key="mis_pedidos">Mis Pedidos</button>
+            <button class="cta-button" onclick="location.href='ver_carrito.php'" style="width: auto; padding: 12px 25px; background: #7bd5ff;">Carrito</button>
+            <button class="cta-button" onclick="location.href='productos.html'" style="width: auto; padding: 12px 25px; background: #00C851;" data-key="seguir_comprando">Seguir Comprando</button>
+        </div>
+    </div>
+</section>
+
+<footer><p data-key="derechos">© Celestial</p></footer>
+
+<script src="auth.js"></script>
+<script src="traductor.js"></script>
+<script src="oscuro.js"></script>
+</body>
+</html>

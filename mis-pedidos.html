@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Mis Pedidos - Celestial</title>
+</head>
+<body>
+<header>
+    <div class="logo"><img src="https://i.ibb.co/0pFFxgx6/Celestial-4-removebg-preview.png"></div>
+    <nav>
+        <a href="inicio.html" data-key="inicio">Inicio</a>
+        <a href="productos.html" data-key="productos">Productos</a>
+        <a href="presentacion.html" data-key="nosotros">Nosotros</a>
+        <a href="contacto.html" data-key="contacto">Contacto</a>
+        <a href="ver_carrito.php">Carrito</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="card" style="max-width: 600px;">
+        <h2 data-key="mis_pedidos">Mis Pedidos</h2>
+        <div class="order-list">
+            <p data-key="no_pedidos">Aquí aparecerán tus pedidos realizados.</p>
+            <div class="order-item" style="border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 8px;">
+                <p><strong>Pedido #001</strong> - <span data-key="camiseta_negra">Camiseta Negra Celestial</span></p>
+                <p><strong data-key="estado">Estado:</strong> <span data-key="en_preparacion">En preparación</span></p>
+                <p><strong data-key="fecha">Fecha:</strong> <span id="orderDate">Cargando...</span></p>
+                <p><strong data-key="total">Total:</strong> 9,99 €</p>
+            </div>
+        </div>
+        <button class="cta-button" onclick="location.href='perfil.html'" data-key="volver_perfil">Volver al Perfil</button>
+    </div>
+</section>
+
+<footer><p data-key="derechos">© Celestial</p></footer>
+
+<script src="auth.js"></script>
+<script src="traductor.js"></script>
+<script src="oscuro.js"></script>
+</body>
+</html>

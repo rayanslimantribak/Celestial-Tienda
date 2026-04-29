@@ -1,0 +1,59 @@
+html, body { height: 100%; margin: 0; }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #7bd5ff, #ffffff);
+  display: flex; flex-direction: column;
+  transition: background 0.3s, color 0.3s;
+}
+header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 30px; background: rgba(0,0,0,0.9); color: white;
+}
+.logo img { height: 70px; }
+nav { display: flex; align-items: center; }
+nav a { margin-left: 20px; color: white; text-decoration: none; font-weight: bold; }
+
+#theme-toggle {
+    background: transparent; border: 1px solid white; color: white;
+    padding: 5px 10px; border-radius: 20px; cursor: pointer;
+    margin-left: 15px; font-size: 1.2rem;
+}
+
+#custom-language-select {
+    margin-left: 20px; padding: 5px 10px; border-radius: 20px;
+    border: 1px solid #ffffff; background-color: #000; color: white;
+}
+
+.hero { text-align: center; padding: 50px 20px; flex: 1; }
+.hero h1 {
+    font-size: 6rem; text-transform: uppercase; letter-spacing: 15px;
+    font-weight: 900; background: linear-gradient(to bottom, #000, #444);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    filter: drop-shadow(4px 4px 0px rgba(255,255,255,0.3));
+}
+
+.card {
+  background: white; padding: 30px; border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1); display: inline-block;
+  width: 90%; max-width: 400px; text-align: left; margin: 10px auto;
+}
+
+.cta-button {
+  background: #111; color: white; padding: 12px 25px; border: none;
+  border-radius: 50px; cursor: pointer; text-decoration: none;
+}
+
+.team-container { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 40px; }
+.team-member { text-align: center; }
+.team-member img { 
+    width: 180px; height: 180px; border-radius: 50%; object-fit: cover; 
+    background-color: white; padding: 10px; border: 1px solid #ddd;
+}
+
+footer { text-align: center; padding: 20px; background: black; color: white; }
+
+/* --- MODO OSCURO --- */
+body.dark-mode { background: linear-gradient(135deg, #1a1a1a, #000000) !important; color: #fff; }
+body.dark-mode .card { background: #222 !important; color: #fff !important; }
+body.dark-mode .hero h1 { background: linear-gradient(to bottom, #fff, #aaa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+body.dark-mode p, body.dark-mode h2, body.dark-mode h3 { color: #fff !important; }

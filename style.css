@@ -1,0 +1,167 @@
+html, body { height: 100%; margin: 0; }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #7bd5ff, #ffffff);
+  display: flex; flex-direction: column;
+  transition: background 0.3s ease;
+}
+
+/* MODO OSCURO - todas las letras blancas */
+body.modo-oscuro {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: white;
+}
+
+body.modo-oscuro header {
+  background: rgba(0, 0, 0, 0.95);
+}
+
+body.modo-oscuro nav a {
+  color: white;
+}
+
+body.modo-oscuro .card {
+  background: rgba(30, 30, 46, 0.95);
+  color: white;
+}
+
+body.modo-oscuro .card h2,
+body.modo-oscuro .card h3,
+body.modo-oscuro .card p {
+  color: white;
+}
+
+body.modo-oscuro .profile-info {
+  background: #2d2d44;
+  color: white;
+}
+
+body.modo-oscuro .profile-info p {
+  color: white;
+}
+
+body.modo-oscuro .profile-info strong {
+  color: #7bd5ff;
+}
+
+body.modo-oscuro input[type="text"],
+body.modo-oscuro input[type="email"],
+body.modo-oscuro input[type="password"] {
+  background: #2d2d44;
+  border-color: #444;
+  color: white;
+}
+
+body.modo-oscuro input::placeholder {
+  color: #aaa;
+}
+
+body.modo-oscuro footer {
+  background: rgba(0, 0, 0, 0.95);
+  color: white;
+}
+
+body.modo-oscuro .cta-button {
+  background: #333;
+}
+
+body.modo-oscuro .cta-button:hover {
+  background: #444;
+}
+
+body.modo-oscuro .team-member p {
+  color: white;
+}
+
+body.modo-oscuro #welcomeMessage {
+  background: rgba(30, 30, 46, 0.95) !important;
+}
+
+body.modo-oscuro #welcomeMessage p {
+  color: white !important;
+}
+
+header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 30px; background: rgba(0,0,0,0.9); color: white;
+  transition: background 0.3s ease;
+}
+.logo img { height: 70px; }
+nav a { 
+  margin-left: 20px; 
+  color: white; 
+  text-decoration: none; 
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+.hero { text-align: center; padding: 50px 20px; flex: 1; }
+.card {
+  background: white; padding: 30px; border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1); display: inline-block;
+  width: 90%; max-width: 400px; text-align: left; margin: 10px auto;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.cta-button {
+  background: #111; color: white; padding: 12px 25px; border: none;
+  border-radius: 50px; cursor: pointer; text-decoration: none; display: inline-block; text-align: center;
+  transition: all 0.3s ease;
+}
+.cta-button:hover {
+  background: #333;
+  transform: scale(1.05);
+}
+.team-container { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 20px; }
+.team-member { text-align: center; }
+.team-member img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid white; }
+footer { text-align: center; padding: 20px; background: black; color: white; transition: background 0.3s ease; }
+
+/* Estilos para formularios */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* Contenedor de información del perfil */
+.profile-info {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.profile-info h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.profile-info p {
+    margin: 8px 0;
+    color: #555;
+}
+
+/* Botones en área personal */
+.profile-actions .cta-button {
+    margin: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .logo img { height: 50px; margin-bottom: 10px; }
+    nav { display: flex; flex-wrap: wrap; justify-content: center; }
+    nav a { margin: 5px; }
+    .team-container { flex-direction: column; align-items: center; }
+    .card { width: 95%; padding: 20px; }
+}
