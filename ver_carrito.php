@@ -69,6 +69,12 @@ $total = 0;
             background: white;
             border-radius: 10px;
         }
+        .botones-accion {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
         body.modo-oscuro .carrito-item {
             background: #2d2d44;
         }
@@ -107,6 +113,9 @@ $total = 0;
             <div class="carrito-item" style="justify-content: center;">
                 <p>Tu carrito está vacío</p>
             </div>
+            <div class="botones-accion">
+                <button class="cta-button" onclick="location.href='productos.html'" style="background: #7bd5ff; width: auto; padding: 12px 30px;">Ver Productos</button>
+            </div>
         <?php else: ?>
             <?php while($item = $result->fetch_assoc()): 
                 $total += $item['producto_precio'] * $item['cantidad'];
@@ -120,7 +129,7 @@ $total = 0;
                     <div class="carrito-precio">
                         <?php echo number_format($item['producto_precio'] * $item['cantidad'], 2); ?> €
                     </div>
-                    <button class="carrito-eliminar" onclick="eliminarDelCarrito(<?php echo $item['id']; ?>)">X</button>
+                    <button class="carrito-eliminar" onclick="eliminarDelCarrito(<?php echo $item['id']; ?>)">Eliminar</button>
                 </div>
             <?php endwhile; ?>
             
@@ -128,21 +137,16 @@ $total = 0;
                 Total: <?php echo number_format($total, 2); ?> €
             </div>
             
-            <div style="text-align: center; margin-top: 20px;">
-                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                    <input type="hidden" name="cmd" value="_xclick">
-                    <input type="hidden" name="business" value="tucorreo@paypal.com">
-                    <input type="hidden" name="item_name" value="Compra Celestial">
-                    <input type="hidden" name="amount" value="<?php echo $total; ?>">
-                    <input type="hidden" name="currency_code" value="EUR">
-                    <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-large.png" alt="PayPal" style="height: 50px; cursor: pointer;" onclick="this.closest('form').submit();">
-                </form>
+            <div class="botones-accion">
+                <button class="cta-button" onclick="location.href='checkout.php'" style="background: #00C851; width: auto; padding: 12px 30px;">Finalizar Compra</button>
+                <button class="cta-button" onclick="location.href='productos.html'" style="background: #7bd5ff; width: auto; padding: 12px 30px;">Seguir Comprando</button>
             </div>
         <?php endif; ?>
     </div>
 </section>
 
 <footer><p>© Celestial</p></footer>
+
 <script src="auth.js"></script>
 <script src="traductor.js"></script>
 <script src="oscuro.js"></script>
