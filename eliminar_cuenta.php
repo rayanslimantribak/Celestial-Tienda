@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 
 $usuario_id = $_SESSION['user_id'];
 
-// Verificar que el usuario no sea el administrador principal (id=1)
+// Evitar que el administrador (id=1) se elimine a sí mismo
 if ($usuario_id == 1) {
     echo json_encode(['success' => false, 'message' => 'No se puede eliminar la cuenta de administrador']);
     exit;
@@ -27,7 +27,6 @@ $stmt->bind_param("i", $usuario_id);
 $stmt->execute();
 
 if ($stmt->affected_rows > 0) {
-    // Cerrar sesión
     session_destroy();
     echo json_encode(['success' => true, 'message' => 'Cuenta eliminada correctamente']);
 } else {
