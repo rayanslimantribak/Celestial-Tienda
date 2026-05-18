@@ -1,6 +1,0 @@
-ErrorDocument 404 /celestial/404.html
-
-# Redirigir "error" a la página 404
-RewriteEngine On
-RewriteRule ^error$ /celestial/404.html [L]
-RewriteRule ^error/$ /celestial/404.html [L]
